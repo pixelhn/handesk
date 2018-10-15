@@ -1,20 +1,33 @@
 div.tagsinput {
-  border:1px solid @lighter-gray;
-  color:@gray;
-  height:@size1;
-  .br1;
-  overflow:hidden;
+	border:2px solid #eee;
+	color:@gray;
+	min-height: 36px;
+	overflow:hidden;
+	padding: 3px;
+	.br1;
 }
 
 div.tagsinput input{
-  .fs2;
+	.fs2;
+	border: none;
+	font-family: @family-serif;
+	color: #757575;
+}
+
+div.tagsinput input:focus{
+	box-shadow: none 
 }
 
 div.tagsinput span.tag{
-    font-family: Lato, sans-serif;
-    padding:1px 2px;
-    background-color: @broken-white;
-    border-color: @lighter-gray;
-    color:black;
-    .fs2; .br1;
+	font-family: @family-serif;
+	padding: 1px 6px;
+	background-color: @blue;
+	border-color: @blue;
+	color: #fff;
+	.fs2; 
+	// .br1;
+}
+
+div.tagsinput span.tag a{
+	color: rgba(0,0,0,0.4);
 }

@@ -15,13 +15,29 @@ class User extends Authenticatable
 {
     use Notifiable;
 
+    // protected $connection = "mysql_remote";
+
     protected $table = 'users';
 
-    protected $guarded = ['admin', 'assistant'];
+    protected $guarded = ['admin', 'assistant', 'is_superuser', 'is_not_admin'];
+
+    // protected $appends = ['admin', 'assistant'];
 
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function getLocaleAttribute(){
+    	return;
+    }
+
+    // public function getAdminAttribute(){
+    // 	return $this->is_superuser;
+    // }
+
+    // public function getAssistantAttribute(){
+    // 	return $this->is_not_admin;
+    // }
 
     public function tickets()
     {

@@ -1,4 +1,6 @@
 let mix = require('laravel-mix');
+const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+const WebpackShellPlugin = require('webpack-shell-plugin');
 
 /*
  |--------------------------------------------------------------------------
@@ -11,16 +13,53 @@ let mix = require('laravel-mix');
  |
  */
 
-mix.js([
-        'resources/assets/js/app.js',
-        'resources/assets/js/searcher.js',
-        'resources/assets/js/libs/jquery.tagsinput.min.js',  //http://xoxco.com/projects/code/tagsinput/
-        'resources/assets/js/libs/mention.js/bootstrap-typeahead.js',  //https://github.com/ivirabyan/jquery-mentions
-        'resources/assets/js/libs/mention.js/mention.js'  //https://github.com/ivirabyan/jquery-mentions
-    ], 'public/js')
-    .babel('resources/assets/js/moment.min.js'                 ,'public/js/moment.js')
-    .less('resources/assets/less/style.less',                  '../resources/assets/css/style.css')
-    .styles([
-        'resources/assets/css/libs/jquery.tagsinput.min.css',
-        'resources/assets/css/style.css'
-    ],'public/css/all.css');
+ mix.js([
+ 	'resources/assets/js/app.js',
+ 	'resources/assets/js/searcher.js',
+	'resources/assets/js/libs/jquery.tagsinput.min.js',  //http://xoxco.com/projects/code/tagsinput/
+	'resources/assets/js/libs/mention.js/bootstrap-typeahead.js',  //https://github.com/ivirabyan/jquery-mentions
+	'resources/assets/js/libs/mention.js/mention.js'  //https://github.com/ivirabyan/jquery-mentions
+	], 'public/js')
+ .babel('resources/assets/js/moment.min.js'                 ,'public/js/moment.js')
+ .less('resources/assets/less/style.less',                  '../resources/assets/css/style.css')
+ .styles([
+ 	'resources/assets/css/libs/jquery.tagsinput.min.css',
+ 	'resources/assets/css/style.css'
+ 	],'public/css/all.css');
+
+
+mix.webpackConfig({
+	plugins: [
+		new WebpackShellPlugin({
+			// onBuildStart:['php artisan -c --quiet'], onBuildEnd:[]
+		}),
+		new BrowserSyncPlugin({
+			files: [
+				'app/**/*',
+				'public/**/*',
+				'resources/views/**/*',
+				'resources/lang/**/*',
+				'routes/**/*',
+				'docs/**/*'
+			],
+			notify: {
+				styles:  [
+					"display: none",
+					"padding: 15px",
+					"font-family: sans-serif",
+					"position: fixed",
+					"font-size: 0.9em",
+					"z-index: 9999",
+					"bottom: 2px",
+					"right: 2px",
+					"border-bottom-left-radius: 5px",
+					"background-color: #1B2032",
+					"margin: 0",
+					"color: white",
+					"text-align: center",
+					"border-radius: 3px"
+				]
+			}
+		}),
+	]
+});

@@ -11,6 +11,8 @@
     <title>{{ config('app.name', 'Handesk') }}</title>
 
     <!-- Styles -->
+    <link href="{{ asset('fonts/gotham/stylesheet.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/mdi.css') }}" rel="stylesheet">
     <link href="{{ asset('css/all.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -58,6 +60,12 @@
 
     </script>
     @yield('scripts')
+
+    @if(App::environment('local'))
+		<script id="__bs_script__">//<![CDATA[
+    		document.write("<script async src='http://HOST:3002/browser-sync/browser-sync-client.js?v=2.26.3'><\/script>".replace("HOST", location.hostname));
+		//]]></script>
+    @endif
 
 </body>
 </html>

@@ -1,4 +1,4 @@
-<h4> @icon(inbox) {{ trans_choice('ticket.ticket', 2) }}</h4>
+<h4> <i class="mdi mdi-comment-processing-outline"></i> {{ trans_choice('ticket.ticket', 2) }}</h4>
 <ul>
     @php ( $repository = new App\Repositories\TicketsRepository )
     @if( auth()->user()->assistant )

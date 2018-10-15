@@ -1,64 +1,94 @@
 @import "Hurricane/Hurricane";
 
 .sidebar{
-  .pt4;
-  overflow:auto;
-  position: fixed;
-  height: 100%;
-  float: left;
-  background-color:@dark-gray;
-  width: @sidebar-width;
+	.pt4;
+	overflow:auto;
+	position: fixed;
+	height: 100%;
+	float: left;
+	width: @sidebar-width;
+
+	background-color: #fff;
+	-webkit-box-shadow: 0px 3px 12px rgba(238, 238, 238, 0.5);
+	box-shadow: 0px 3px 12px rgba(238, 238, 238, 0.5);
+	border-right: 1px solid #F4F4F5;
 }
 
-.sidebar img{
-  margin-left: @size4 + @size4 + @size2;
-  .mb1;
-  height:59px;
+.sidebar .nav-logo {
+    padding: 0 22px;
+    margin-top: 32px;
+    margin-bottom: 32px;
+    display: block;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 28px;
+    color: #585858;
+    text-decoration: none;
+}
+
+.sidebar .nav-logo img{
+	margin-top: -4px;
+	vertical-align: middle;
+}
+
+.sidebar .color {
+    color: #3326AF;
+    display: inline;
 }
 
 .sidebar h4{
-  .ml4;
-  color:@lighter-gray;
+	.ml4;
+	color: #585858;
+	font-size: 14px;
+	text-transform: uppercase; 
+}
+
+.sidebar h4 i{
+	line-height: 1em;
+	font-size: 24px;
+    margin-top: -2px;
+    float: left;
+    margin-right: 8px;
 }
 
 .sidebar ul{
 }
 
 .sidebar li{
-  .pl4; .pt2; .pr2;
-  list-style: none;
-  height:@size5 - @size2;
+	.pl4; .pt2; .pr2;
+	list-style: none;
+	height:@size5 - @size2;
 }
 
 .sidebar li a{
-  color: @light-gray;
-  text-decoration: none;
+	color: @light-gray;
+	text-decoration: none;
 }
 
 .sidebar li.active{
-  background-color:@darkest-gray;
-  border-left:solid @size1 @brand-second;
-  padding-left: @size4 - @size1;
-  color:white;
+	// background-color:@darkest-gray;
+	border-left:solid @size1 @brand-second;
+	padding-left: @size4 - @size1;
+	// color:white;
 }
 
 .sidebar li.active a{
-  color:white;
+	color:@blue;
 }
 
 .sidebar .label{
-  float:right;
-  .mr2;
-  font-size:12px;
-  background-color: @brand-second;
-  color:white;
+	float:right;
+	.mr2;
+	font-size:12px;
+	background-color: @brand-second;
+	color:white;
 }
 
 @media (max-width:@phone-max-size) {
-  .sidebar{
-    left: -@sidebar-width - 20;
-    .shadow-outer-2;
-    position:absolute;
-    z-index:99;
-  }
+	.sidebar{
+		left: -@sidebar-width - 20;
+		.shadow-outer-2;
+		position:absolute;
+		z-index:99;
+	}
 }

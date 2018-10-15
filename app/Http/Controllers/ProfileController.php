@@ -17,7 +17,6 @@ class ProfileController extends Controller
 
         $user->update([
             'name'   => $request->get('name'),
-            'locale' => $request->get('locale'),
             'email'  => $request->get('email', $user->email),
         ]);
 

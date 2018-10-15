@@ -6,7 +6,7 @@ use PhpImap\IncomingMail;
 use Illuminate\Support\Facades\Storage;
 
 class Attachment extends BaseModel
-{
+{	
     public function attachable()
     {
         return $this->morphTo();

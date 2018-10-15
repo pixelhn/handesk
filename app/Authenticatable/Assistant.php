@@ -9,6 +9,7 @@ class Assistant extends User
 {
     use HasParentModel, AuthenticatableRoles;
 
+    // protected static $role = ['is_not_admin' => true];
     protected static $role = ['assistant' => true];
 
     public static function notifyAll($notification)

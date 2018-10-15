@@ -9,6 +9,7 @@ class Admin extends User
 {
     use HasParentModel, AuthenticatableRoles;
 
+    // protected static $role = ['is_superuser' => true];
     protected static $role = ['admin' => true];
 
     public static function notifyAll($notification, $except = null)
