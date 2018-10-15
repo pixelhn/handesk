@@ -36,9 +36,24 @@
                 <tr><td> {{ __('idea.repository') }} </td><td> {{ Form::select('repository', array_flip(config('issues.repositories')), $idea->repository) }} </td></tr>
             </table>
             <table class="w50">
-                <tr><td> {{ __('idea.developmentEffort') }}</td><td><input name="development_effort" type="range" min="0" max="10" value="{{$idea->development_effort}}"></td></tr>
-                <tr><td> {{ __('idea.salesImpact') }}</td><td><input name="sales_impact" type="range" min="0" max="10" value="{{$idea->sales_impact}}"></td></tr>
-                <tr><td> {{ __('idea.currentImpact') }}</td><td><input name="current_impact" type="range" min="0" max="10" value="{{$idea->current_impact}}"></td></tr>
+                <tr>
+                	<td> {{ __('idea.developmentEffort') }}</td>
+                	<td>
+                		<input class="slider" name="development_effort" type="range" min="0" max="10" value="{{$idea->development_effort}}">
+                	</td>
+                </tr>
+                <tr>
+                	<td> {{ __('idea.salesImpact') }}</td>
+                	<td>
+                		<input class="slider" name="sales_impact" type="range" min="0" max="10" value="{{$idea->sales_impact}}">
+                	</td>
+                </tr>
+                <tr>
+                	<td> {{ __('idea.currentImpact') }}</td>
+                	<td>
+                		<input class="slider" name="current_impact" type="range" min="0" max="10" value="{{$idea->current_impact}}">
+                	</td>
+                </tr>
             </table>
             <button class="ml4 mt2 uppercase"> {{__("idea.save") }}</button>
         {{ Form::close() }}

@@ -26,9 +26,30 @@
         <table class="maxw600 no-padding">
             <tr><td> {{ trans_choice('ticket.tag',2) }}</td><td colspan="4"> <input id="tags" name="tags" value="{{ $idea->tagsString() }}"></td></tr>
             <tr><td> {{ __('idea.repository') }} </td><td> {{ $idea->repositoryName() }} </td></tr>
-            <tr><td> {{ __('idea.developmentEffort') }}</td><td><input name="development_effort" type="range" min="0" max="10" value="{{$idea->development_effort}}"></td></tr>
-            <tr><td> {{ __('idea.salesImpact') }}</td><td><input name="sales_impact" type="range" min="0" max="10" value="{{$idea->sales_impact}}"></td></tr>
-            <tr><td> {{ __('idea.currentImpact') }}</td><td><input name="current_impact" type="range" min="0" max="10" value="{{$idea->current_impact}}"></td></tr>
+            <tr>
+            	<td> {{ __('idea.developmentEffort') }}</td>
+            	<td>
+            		<div class="progress">
+            			<div class="progress-bar" style="width: {{$idea->development_effort*10}}%" role="progressbar" aria-valuenow="{{$idea->development_effort*10}}" aria-valuemin="0" aria-valuemax="100"></div>
+            		</div>
+            	</td>
+            </tr>
+            <tr>
+            	<td> {{ __('idea.salesImpact') }}</td>
+            	<td>
+            		<div class="progress">
+            			<div class="progress-bar" style="width: {{$idea->sales_impact*10}}%" role="progressbar" aria-valuenow="{{$idea->sales_impact*10}}" aria-valuemin="0" aria-valuemax="100"></div>
+            		</div>
+            	</td>
+            </tr>
+            <tr>
+            	<td> {{ __('idea.currentImpact') }}</td>
+            	<td>
+            		<div class="progress">
+            			<div class="progress-bar" style="width: {{$idea->current_impact*10}}%" role="progressbar" aria-valuenow="{{$idea->current_impact*10}}" aria-valuemin="0" aria-valuemax="100"></div>
+            		</div>
+            	</td>
+            </tr>
         </table>
     </div>
 @endsection

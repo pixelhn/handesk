@@ -29,7 +29,7 @@
                 </div>
                 <div class="mb3">
                     <input type="checkbox" class="" name="remember" {{ old('remember') ? 'checked' : '' }}>
-                    Remember Me
+                    Recordarme
                 </div>
 
                 <div>

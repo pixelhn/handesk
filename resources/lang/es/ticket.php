@@ -14,7 +14,7 @@ return [
     'date'       => 'Data',
     'team'       => 'Equipo',
     'user'       => 'Agente|Agentes',
-    'recent'     => 'Actualizado recientemente',
+    'recent'     => 'Recientes',
     'requested'  => 'Solicitado',
     'updated'    => 'Actualizado',
     'update'     => 'Actualitzar',
