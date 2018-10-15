@@ -16,6 +16,8 @@ return [
     'city'       => 'Ciudad',
     'country'    => 'País',
 
+    'search'	=> 'Buscar',
+
     'new'            => 'Nuevo',
     'visited'        => 'Visitado',
     'first-contact'  => 'Primer contacto',

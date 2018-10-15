@@ -17,7 +17,7 @@
                 {{ __('ticket.isSolvedQuestion') }} {{ Form::checkbox('solved') }}
             @endif
             <br><br>
-            <button class="uppercase ph3"> @busy @icon(comment) {{ __('ticket.comment') }}</button>
+            <button class="uppercase ph3"> @busy <i class="mdi mdi-comment"></i> {{ __('ticket.comment') }}</button>
             {{ Form::close() }}
         </div>
     @endif

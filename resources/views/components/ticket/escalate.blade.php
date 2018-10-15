@@ -3,15 +3,15 @@
         <br>
         <div class="p4 bg-danger white mt4 br1 clear-both">
             {{ Form::open(["url" => route('tickets.escalate.destroy', $ticket), "method" => "delete" ]) }}
-            @icon(flag) {!! __('ticket.escalatedDesc') !!}
-            <button class="primary ml2">@icon(flag) {{ __('ticket.de-escalate') }}</button>
+            <i class="mdi mdi-flag"></i> {!! __('ticket.escalatedDesc') !!}
+            <button class="primary ml2"><i class="mdi mdi-flag"></i> {{ __('ticket.de-escalate') }}</button>
             {{ Form::close() }}
         </div>
     @endif
 @else
     <div class="float-right mt-2 mr4">
     {{ Form::open(["url" => route('tickets.escalate.store', $ticket) ]) }}
-    <button class="secondary">@icon(flag) {{ __('ticket.escalate') }}</button>
+    <button class="secondary"><i class="mdi mdi-flag"></i> {{ __('ticket.escalate') }}</button>
     {{ Form::close() }}
     </div>
 @endif

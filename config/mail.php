@@ -132,7 +132,7 @@ return [
         'port'           => env('MAIL_FETCH_PORT', 110),
         'username'       => env('MAIL_FETCH_USERNAME', 'hi'),
         'password'       => env('MAIL_FETCH_PASSWORD'),
-        'replyAboveLine' => '##- Please type your reply above this line -##',
+        'replyAboveLine' => '##- Por favor escriba su respuesta por encima de esta línea -##',
         'useSSL'         => env('MAIL_FETCH_USE_SSL', false),
         'options'        => env('MAIL_FETCH_OPTIONS', '/pop3'),
     ],

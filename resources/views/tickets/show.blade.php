@@ -9,7 +9,7 @@
             @busy <span class="label ticket-status-{{ $ticket->statusName() }}">{{ __("ticket." . $ticket->statusName() ) }}</span> &nbsp;
             @busy <span class="label ticket-priority-{{ $ticket->priorityName() }}">{{ __("ticket." . $ticket->priorityName() ) }}</span> &nbsp;
             <span class="date">{{  $ticket->created_at->diffForHumans() }} · {{  $ticket->requester->name }} &lt;{{$ticket->requester->email}}&gt;</span>
-            <button class="ternary" onClick="$('#ticket-info').hide(); $('#ticket-edit').show()">@icon(pencil)</button>
+            <button class="ternary" onClick="$('#ticket-info').hide(); $('#ticket-edit').show()"><i class="mdi mdi-pencil"></i></button>
             {{--<a class="ml4" title="Public Link" href="{{route('requester.tickets.show',$ticket->public_token)}}"> @icon(globe) </a>--}}
         </div>
         <div id="ticket-edit" class="hidden" class="">
@@ -40,13 +40,13 @@
             @include('components.uploadAttachment', ["attachable" => $ticket, "type" => "tickets"])
             {{ Form::hidden('new_status', $ticket->status, ["id" => "new_status"]) }}
             @if($ticket->isEscalated() )
-                <button class="mt1 uppercase ph3"> @icon(comment) {{ __('ticket.note') }} </button>
+                <button class="mt1 uppercase ph3"> <i class="mdi mdi-comment"></i> {{ __('ticket.note') }} </button>
             @else
                 <div class="mb1">
                     {{ __('ticket.note') }}: {{ Form::checkbox('private') }}
                 </div>
-                <button class="mt1 uppercase ph3"> @icon(comment) {{ __('ticket.commentAs') }} {{ $ticket->statusName() }}</button>
-                <span class="dropdown button caret-down"> @icon(caret-down) </span>
+                <button class="mt1 uppercase ph3"> <i class="mdi mdi-comment"></i> {{ __('ticket.commentAs') }} {{ $ticket->statusName() }}</button>
+                <span class="dropdown button caret-down"> <i class="mdi mdi-chevron-down"></i> </span>
                 <ul class="dropdown-container">
                     <li><a class="pointer" onClick="setStatusAndSubmit( {{ App\Ticket::STATUS_OPEN    }} )"><div style="width:10px; height:10px" class="circle inline ticket-status-open mr1"></div> {{ __('ticket.commentAs') }} <b>{{ __("ticket.open") }}   </b> </a></li>
                     <li><a class="pointer" onClick="setStatusAndSubmit( {{ App\Ticket::STATUS_PENDING }} )"><div style="width:10px; height:10px" class="circle inline ticket-status-pending mr1"></div> {{ __('ticket.commentAs') }} <b>{{ __("ticket.pending") }}</b> </a></li>

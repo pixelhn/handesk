@@ -1,10 +1,10 @@
 <tr>
         <td>
                 <input type="checkbox" name="selected[{{$ticket->id}}]" meta:index="{{$ticket->id}}" class="hidden selector">
-                <span class="label ticket-status-{{ $ticket->statusName() }}">{{ link_to_route('tickets.index', str_limit(__('ticket.' . $ticket->statusName()), 1, ''), ["status" => $ticket->status]) }}</span>&nbsp;
-                <span class="label ticket-priority-{{ $ticket->priorityName() }}">{{ link_to_route('tickets.index', str_limit(__('ticket.' . $ticket->priorityName()), 1, ''), ["priority" => $ticket->priority]) }}</span>&nbsp;
-                @if( $ticket->isEscalated() ) @icon(flag) @endif
-                @if( $ticket->getIssueId() ) @icon(bug) @endif
+                <span data-toogle="tooltip" title="{{ __('ticket.' . $ticket->statusName()) }}" class="label ticket-status-{{ $ticket->statusName() }}">{{ link_to_route('tickets.index', str_limit(__('ticket.' . $ticket->statusName()), 1, ''), ["status" => $ticket->status]) }}</span>&nbsp;
+                <span data-toogle="tooltip" title="{{ __('ticket.' . $ticket->priorityName()) }}" class="label ticket-priority-{{ $ticket->priorityName() }}">{{ link_to_route('tickets.index', str_limit(__('ticket.' . $ticket->priorityName()), 1, ''), ["priority" => $ticket->priority]) }}</span>&nbsp;
+                @if( $ticket->isEscalated() ) <i class="mdi mdi-flag"></i> @endif
+                @if( $ticket->getIssueId() ) <i class="mdi mdi-bug"></i> @endif
                 <a href="{{ route('tickets.show', $ticket) }}"> #{{ $ticket->id }}. {{  str_limit($ticket->title, 35) }}</a>
         </td>
         <td> {{ link_to_route('tickets.index', $ticket->requester->name, ["requester_id" => $ticket->requester_id] )           }}</td>

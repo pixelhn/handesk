@@ -2,7 +2,7 @@
 
 return [
     'all'        => 'Todos',
-    'ticket'     => 'Caso|Casos',
+    'ticket'     => 'Ticket|Tickets',
     'assigned'   => 'Assignado',
     'myTickets'  => 'Mis tíquets',
     'newTicket'  => 'Nuevo Tíquet',

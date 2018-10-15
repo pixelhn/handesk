@@ -5,8 +5,8 @@
     </div>
 
     <div class="description actions comment mb4">
-        <div class="float-left ml4  shadow-outer-1 circle">@gravatar($user->email, 90)</div>
-        <h3 class="ml4 float-left"> @if($user->assistant) <span class="gold">@icon(star)</span> @endif {{ $user->name }}</h3>
+        <div class="float-left ml4  circle">@gravatar($user->email, 90)</div>
+        <h3 class="ml4 float-left"> @if($user->assistant) <span class="gold"><i class="mdi mdi-star"></i></span> @endif {{ $user->name }}</h3>
         <div class="clear-both mb-5"> </div>
     </div>
 
@@ -36,7 +36,7 @@
 
     <div class="clear-both mb4"></div>
 
-    <a class="ml5 pointer" onClick="$('#password').toggle('fast')"> @icon(key) {{ __('user.changePassword') }}</a>
+    <a class="ml5 pointer" onClick="$('#password').toggle('fast')"> <i class="mdi mdi-key"></i> {{ __('user.changePassword') }}</a>
     <div id="password" class="comment actions hidden mt3">
         {{ Form::open( ["url" => route('profile.password')] ) }}
         <table class="w50 ">

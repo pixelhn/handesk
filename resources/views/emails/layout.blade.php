@@ -8,7 +8,7 @@
             font-family: Lato, sans-serif;
             font-size: 14px;
             line-height: 1.42857143;
-            font-weight: 100;
+            font-weight: 500;
         }
     </style>
 </head>
@@ -16,7 +16,7 @@
     @yield('body')
 
     <div style="margin-top:40px">
-        Powered by <a href="https://github.com/BadChoice/handesk"><img src="{{ url('/images/logo.png') }}" height="30" align="center"></a>
+        Powered by <a href="https://pay.pixel.hn"><img src="{{ url('/images/logo.png') }}" height="26" align="center"></a>
     </div>
 
 </body>

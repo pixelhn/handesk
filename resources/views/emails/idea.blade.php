@@ -11,6 +11,6 @@
         </div>
 
         <div style="margin-top:40px">
-                <a href="{{$url}}">View the idea in Handesk</a>
+                <a href="{{$url}}">Ver la idea en PixelPay Handesk</a>
         </div>
 @endsection

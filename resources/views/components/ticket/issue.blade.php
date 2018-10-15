@@ -2,11 +2,11 @@
     @if(auth()->user()->assistant || auth()->user()->admin)
         @if($ticket->getIssueId())
             <div class="float-left mt-1 mr4 ml-3">
-                <a class="button fs2 secondary" href="{{$ticket->issueUrl()}}" target="_blank"> @icon(bug) {{ __('ticket.seeIssue') }}</a>
+                <a class="button fs2 secondary" href="{{$ticket->issueUrl()}}" target="_blank"> <i class="mdi mdi-bug"></i> {{ __('ticket.seeIssue') }}</a>
             </div>
         @else
             <div class="float-left mt-2 mr4 ml-3">
-            <button class="secondary dropdown"> @icon(bug) {{ __('ticket.createIssue') }}</button>
+            <button class="secondary dropdown"> <i class="mdi mdi-bug"></i> {{ __('ticket.createIssue') }}</button>
             <ul class="dropdown-container p4">
                 @foreach(config('issues.repositories') as $name => $repo)
                     <li><a class="pointer" onClick="createIssueToRepo('{{$repo}}')"> {{ $name }}</a></li>

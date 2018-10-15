@@ -1,5 +1,5 @@
 <a class="button secondary dropdown">
-    @icon(calendar)
+    <i class="mdi mdi-calendar"></i>
     {{ Carbon\Carbon::parse( $repository->startDate)->format("jS F Y")  }} -
     {{ Carbon\Carbon::parse( $repository->endDate)->format("jS F Y")  }}
 </a>
@@ -18,10 +18,10 @@
             </ul>
         </div>
         <div id="custom-date-range" class="pl3 pt1 hidden bl">
-            @icon(calendar)
+            <i class="mdi mdi-calendar"></i>
             {{ Form::input('date', 'startDate', $repository->startDate, ["id" => "start_date"]) }}
             {{ Form::input('date', 'endDate',   $repository->endDate,   ["id" => "end_date"]) }}
-            <div class="mt3 text-right"><button id="filter_date_button"> @icon(filter) {{ __('report.filter') }}</button></div>
+            <div class="mt3 text-right"><button id="filter_date_button"> <i class="mdi mdi-filter"></i> {{ __('report.filter') }}</button></div>
         </div>
     </div>
 </div>
