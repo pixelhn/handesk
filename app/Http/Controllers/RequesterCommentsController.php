@@ -3,13 +3,18 @@
 namespace App\Http\Controllers;
 
 use App\Ticket;
+use App\Attachment;
 
 class RequesterCommentsController extends Controller
 {
     public function store($public_token)
     {
         $ticket = Ticket::findWithPublicToken($public_token);
-        $ticket->addComment(null, request('body'), $this->getNewStatus());
+        $comment = $ticket->addComment(null, request('body'), $this->getNewStatus());
+
+        if ($comment && request()->hasFile('attachment')) {
+            Attachment::storeAttachmentFromRequest(request(), $comment);
+        }
 
         return back();
     }
