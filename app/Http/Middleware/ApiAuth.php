@@ -21,9 +21,8 @@ class ApiAuth
             return response()->json(['error' => 'Unauthorized'], Response::HTTP_FORBIDDEN);
         }
 
-        $response = $next($request);
-        $response->header('Access-Control-Allow-Origin', '*');
-
-        return $response;
+        return $next($request)
+        	->header('Access-Control-Allow-Origin', '*')
+			->header('Access-Control-Allow-Methods', 'GET, POST');
     }
 }

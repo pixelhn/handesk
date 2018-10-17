@@ -34,3 +34,8 @@ $('.dropdown').click(function() {
     $(this).next('.dropdown-container-inverse').toggle();
     $(this).next('.dropdown-container').toggle();
 });
+
+$('[type="checkbox"]').each(function(index, el) {
+	$(this).wrap('<label class="checkbox-container"></label>');
+	$('.checkbox-container').append('<div class="checkmark"></div>');
+});

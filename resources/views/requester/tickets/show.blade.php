@@ -1,11 +1,5 @@
 @extends('layouts.requester')
 @section('content')
-    <div class="description comment">
-        <h3> <i class="mdi mdi-format-list-checks"></i> {{ $ticket->title }}</h3>
-        <span class="label ticket-status-{{ $ticket->statusName() }}">{{ __('ticket.' . $ticket->statusName()) }}</span>&nbsp;
-        <span class="date">{{  $ticket->created_at->diffForHumans() }} · {{  $ticket->requester->name }}</span>
-    </div>
-
     @if($ticket->status != App\Ticket::STATUS_CLOSED)
         <div class="comment new-comment">
             {{ Form::open(["url" => route("requester.comments.store",$ticket->public_token), "files" => true]) }}

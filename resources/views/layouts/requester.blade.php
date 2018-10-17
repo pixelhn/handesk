@@ -18,7 +18,14 @@
 </head>
 <body>
     <div id="app">
-        <div class="center w80">
+    	<div class="requester-header">
+    		<div class="requester-header-container description comment">
+    			<h1> <i class="mdi {{ $ticket->priorityIcon() }}"></i> {{ $ticket->title }}</h1>
+    			<span class="label ticket-status-{{ $ticket->statusName() }}">{{ __('ticket.' . $ticket->statusName()) }}</span>&nbsp;
+    			<span class="date">{{  $ticket->created_at->diffForHumans() }} · {{  $ticket->requester->name }}</span>
+    		</div>
+    	</div>
+        <div class="center requester-container">
             @yield('content')
         </div>
     </div>

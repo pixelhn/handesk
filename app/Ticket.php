@@ -345,4 +345,13 @@ class Ticket extends BaseModel
 
         return explode('#', $issueEvent->body)[1];
     }
+
+    public function priorityIcon(){
+    	switch ($this->priority) {
+    		case static::PRIORITY_LOW: return 'mdi-arrow-down ticket-priority-low-text';
+    		case static::PRIORITY_NORMAL: return 'mdi-flag ticket-priority-normal-text';
+    		case static::PRIORITY_HIGH: return 'mdi-arrow-up ticket-priority-high-text';
+    		case static::PRIORITY_BLOCKER: return 'mdi-arrow-up ticket-priority-blocker-text';
+    	}
+    }
 }
