@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.simple')
 @section('content')
     <div class="center w80 text-center mt5" style="margin-top:100px">
         <h1>403</h1>
